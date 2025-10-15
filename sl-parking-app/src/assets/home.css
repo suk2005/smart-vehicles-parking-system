@@ -1,0 +1,253 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00ff88;
+  --secondary-color: #28a745;
+  --dark-bg: rgba(0, 0, 0, 0.65);
+  --text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  --transition: all 0.3s ease;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Background Video with Overlay */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Dark overlay for better text readability */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Navigation Bar - Enhanced */
+.menu-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 5%;
+  background-color: var(--dark-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-links li {
+  position: relative;
+}
+
+.menu-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition);
+  padding: 5px 0;
+}
+
+.menu-links li a:hover {
+  color: var(--primary-color);
+}
+
+.menu-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.menu-links li a:hover::after {
+  width: 100%;
+}
+
+/* Logo - Animated */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+/* Welcome Section - More Dynamic */
+.welcome {
+  color: white;
+  text-align: center;
+  padding-top: 25vh;
+  text-shadow: var(--text-shadow);
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.welcome h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 40px;
+  font-weight: 400;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Buttons - Modern Style */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+}
+
+.button-group button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: var(--transition);
+}
+
+.button-group button:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button-group button:hover::before {
+  left: 100%;
+}
+
+.button-group button a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .menu-links {
+    margin-top: 15px;
+    gap: 15px;
+  }
+  
+  .welcome {
+    padding-top: 30vh;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .button-group button {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .welcome h1 {
+    font-size: 2.2rem;
+  }
+  
+  .welcome h2 {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+}
+
+#background-video {
+  width: 400px;       /* Adjust width as needed */
+  height: auto;       /* Maintain aspect ratio */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;         /* Behind other content */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
