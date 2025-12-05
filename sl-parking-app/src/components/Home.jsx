@@ -13,7 +13,7 @@ function Home() {
 
       <nav className="menu-bar">
         <ul className="menu-links">
-          <li><Link to="/">HOME</Link></li>  
+          <li><Link to="/">HOME</Link></li> 
           <li><Link to="/form">PARKING_SLIP</Link></li>
           <li><Link to="/history">HISTORY</Link></li>
           <li><Link to="/services">SERVICES</Link></li>
