@@ -20,7 +20,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/bookings', bookingRoutes);  // ✅ Booking APIs
 
 app.get('/api/getuser', userVerification, (req, res) => {
-    res.json({ success: true, username: req.user.username });
+    res.json({ success: true, username: req.user.username });     // ✅ Booking APIs in index 
 });
 
 const PORT = process.env.PORT || 8080;
