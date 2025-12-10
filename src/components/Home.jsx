@@ -15,7 +15,7 @@ function Home() {
         <ul className="menu-links">
           <li><Link to="/">HOME</Link></li> 
           <li><Link to="/form">PARKING_SLIP</Link></li>
-          <li><Link to="/history">HISTORY</Link></li>
+          <li><Link to="/history">HISTORY</Link></li>  
           <li><Link to="/services">SERVICES</Link></li>
           <li><Link to="/contact">CONTACT</Link></li>
           <li><Link to="/location">LOCATION</Link></li>
