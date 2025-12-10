@@ -1,0 +1,50 @@
+/* src/assets/contact.css */
+.contact-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #000428, #004e92);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  border: 2px solid white;
+  padding: 10px 30px;
+  letter-spacing: 2px;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-icons a {
+  text-decoration: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 150px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  display: block;
+}
